@@ -7,7 +7,7 @@ const BarChart = () => {
 
     useEffect(() => {
         if (chartInstance) {
-            chartInstance.destroy(); // Hủy bỏ biểu đồ trước đó nếu tồn tại
+            chartInstance.destroy();
         }
 
         const ctx = document.getElementById('myChart').getContext('2d');
@@ -36,13 +36,12 @@ const BarChart = () => {
 
         setChartInstance(newChartInstance);
 
-        // Phần cleanup
         return () => {
             if (chartInstance) {
-                chartInstance.destroy(); // Hủy bỏ biểu đồ khi component unmount
+                chartInstance.destroy();
             }
         };
-    }, []); // useEffect chạy chỉ một lần sau khi component được render
+    }, []);
 
     return (
         <div>

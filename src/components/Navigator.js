@@ -25,13 +25,13 @@ const adminMenu = [
             { key: 'specialty-management', label: "Specialties' Management" },
         ],
     },
-    {
-        key: 'handbook',
-        label: "Handbooks",
-        children: [
-            { key: 'handbook-management', label: "Handbooks' Management" },
-        ],
-    },
+    // {
+    //     key: 'handbook',
+    //     label: "Handbooks",
+    //     children: [
+    //         { key: 'handbook-management', label: "Handbooks' Management" },
+    //     ],
+    // },
 ];
 
 export const doctorMenu = [

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useUser } from "@clerk/clerk-react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 import Header from "../containers/System/Header";

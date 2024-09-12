@@ -1,6 +1,7 @@
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
+
 import 'tailwindcss/tailwind.css';
 import { login } from '../../services/systems.service';
 import useAuthStore from '../../store/useAuthStore';
@@ -13,11 +14,11 @@ const Login = () => {
         try {
             const res = await login({ email: values.email, password: values.password });
 
-            if (Array.isArray(res.data) && res.data.length === 0) {
-                alert("Email or password is incorrect.");
+            if (res.data.length === 0) {
+                alert("Incorrect email or password.");
             } else if (res.data) {
-                logIn(res.data[0]);
-                navigate(`/system/${res.data[0].id}`);
+                logIn(res.data);
+                navigate(`/system/${res.data.id}`);
             } else {
                 console.log("Invalid response from server.");
             }
@@ -36,9 +37,9 @@ const Login = () => {
                 <ArrowLeftOutlined />
                 <span> Return to the home page.</span>
             </div>
-            <div className='flex justify-center items-center h-screen'>
-                <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-white shadow-lg">
-                    <h1 className="text-2xl font-bold text-center">Login</h1>
+            <div className=' flex justify-center items-center h-screen'>
+                <div className=" w-full max-w-md p-8 space-y-3 rounded-xl bg-white shadow-lg">
+                    <h1 className=" text-2xl font-bold text-center">Login</h1>
                     <Form
                         name="basic"
                         initialValues={{ remember: true }}

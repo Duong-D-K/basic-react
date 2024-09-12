@@ -24,7 +24,7 @@ function App() {
     <div className=''>
       <BrowserRouter>
         <Routes>
-          {/* Trang chủ */}
+          {/* home page */}
           <Route path="/login" element={<Login />} />
 
           <Route path="/" element={<Home />} />
@@ -40,11 +40,10 @@ function App() {
 
           <Route path="/confirmBooking" element={<ConfirmBooking />} />
 
-          {/* Hệ thống */}
+          {/* system */}
           <Route path="/system/*" element={<System />} />
         </Routes>
       </BrowserRouter>
-
       <ToastContainer
         position="bottom-right"
         autoClose={2000}
